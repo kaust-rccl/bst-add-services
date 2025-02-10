@@ -1,0 +1,22 @@
+name: ray2_2
+channels:
+    - pytorch
+    - nvidia
+    - conda-forge
+dependencies:
+    - cmake
+    - python=3.9
+    - pip
+    - gcc=10
+    - gxx=10
+    - pytorch=1.10.2=py3.9_cuda11.3_cudnn8.2.0_0
+    - nccl
+    - torchvision
+    - grpcio=1.43.0
+    - tensorboard
+    - jupyterlab
+    - pip:
+      - ray==2.2
+      - ray[tune,rllib,serve]
+      - wandb
+      - pydantic==1.10.13
