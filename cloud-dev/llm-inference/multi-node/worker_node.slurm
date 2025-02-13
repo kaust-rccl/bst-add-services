@@ -8,7 +8,8 @@
 
 # Write the worker node's IP to a shared file
 echo "$(hostname) slots=1" >> /scratch/user03/llm-inference/multi-node/worker_nodes.txt
-
+source /path/to/miniconda3/etc/profile.d/conda.sh
+conda init
 conda activate /scratch/user03/miniconda/envs/venv
 
 export NUM_CPUS_PER_NODE=${SLURM_CPUS_PER_TASK}
