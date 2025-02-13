@@ -3,9 +3,11 @@
 #SBATCH --output=%x-%j.out
 #SBATCH --error=%x-%j.err
 #SBATCH --ntasks=1
-#SBATCH --hint=nomultithread
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=4
 #SBATCH --time=00:30:00
+
+# Write the worker node's IP to a shared file
+echo "$(hostname) slots=1" >> /scratch/user03/llm-inference/multi-node/worker_nodes.txt
 
 conda activate /scratch/user03/miniconda/envs/venv
 

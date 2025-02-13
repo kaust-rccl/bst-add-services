@@ -1,5 +1,5 @@
 {
     "tensor_parallel": {
-        "tp_size": 1
+        "tp_size": 2
     }
 }

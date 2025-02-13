@@ -1,21 +1,18 @@
 import time
 import torch
 import deepspeed
-import ray
-from ray import serve
-import torch.distributed as dist
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from fastapi import FastAPI
 from pydantic import BaseModel
+import ray
+from ray import serve
+
+ray.init(address="auto", ignore_reinit_error=True)
+serve.start(detached=True, http_options={"host": "0.0.0.0", "port": 8000})
 
 # Initialize FastAPI
 app = FastAPI()
 
-# Start Ray
-#ray.init(ignore_reinit_error=True)
-ray.init(address="auto", ignore_reinit_error=True)
-# Start Ray Serve
-serve.start(detached=True, http_options={"host": "0.0.0.0", "port": 8000})
 
 # Define request structure
 class QueryRequest(BaseModel):
@@ -74,7 +71,7 @@ class DeepSpeedLLMService:
             "inference_time": f"{end_time - start_time:.2f} seconds"
         }
 
-# Bind and deploy the service
+
 ds_service = DeepSpeedLLMService.bind()
 serve.run(ds_service, route_prefix="/")
 
