@@ -1,0 +1,20 @@
+
+CondaError: Run 'conda init' before 'conda activate'
+
+2025-02-12 10:19:20,609	INFO worker.py:1832 -- Started a local Ray instance. View the dashboard at [1m[32m127.0.0.1:8265 [39m[22m
+[36m(ProxyActor pid=9948)[0m INFO 2025-02-12 10:19:25,042 proxy 10.0.23.80 -- Proxy starting on node 65e48f5c8a4390f72a7d4acbf983dfe5d5dc3d84e2925afc14ca9937 (HTTP port: 8000).
+INFO 2025-02-12 10:19:25,244 serve 9641 -- Started Serve in namespace "serve".
+INFO 2025-02-12 10:19:25,278 serve 9641 -- Connecting to existing Serve app in namespace "serve". New http options will not be applied.
+WARNING 2025-02-12 10:19:25,279 serve 9641 -- The new client HTTP config differs from the existing one in the following fields: ['host', 'location']. The new HTTP config is ignored.
+[36m(ProxyActor pid=9948)[0m INFO 2025-02-12 10:19:25,235 proxy 10.0.23.80 -- Got updated endpoints: {}.
+[36m(ServeController pid=9949)[0m INFO 2025-02-12 10:19:25,368 controller 9949 -- Deploying new version of Deployment(name='DeepSpeedLLMService', app='default') (initial target replicas: 1).
+[36m(ProxyActor pid=9948)[0m INFO 2025-02-12 10:19:25,369 proxy 10.0.23.80 -- Got updated endpoints: {Deployment(name='DeepSpeedLLMService', app='default'): EndpointInfo(route='/', app_is_cross_language=False)}.
+[36m(ProxyActor pid=9948)[0m INFO 2025-02-12 10:19:25,376 proxy 10.0.23.80 -- Started <ray.serve._private.router.SharedRouterLongPollClient object at 0x7c3bb8440ca0>.
+[36m(ServeController pid=9949)[0m INFO 2025-02-12 10:19:25,470 controller 9949 -- Adding 1 replica to Deployment(name='DeepSpeedLLMService', app='default').
+INFO 2025-02-12 10:19:55,491 serve 9641 -- Application 'default' is ready at http://0.0.0.0:8000/.
+INFO 2025-02-12 10:19:55,493 serve 9641 -- Deployed app 'default' successfully.
+[36m(ServeReplica:default:DeepSpeedLLMService pid=9944)[0m Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+[36m(ServeReplica:default:DeepSpeedLLMService pid=9944)[0m INFO 2025-02-12 10:35:03,542 default_DeepSpeedLLMService 8l3iqqfy 66b8b883-e352-42f6-a1ad-192737742d68 -- POST /generate 200 12450.6ms
+[36m(ServeReplica:default:DeepSpeedLLMService pid=9944)[0m Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+[36m(ServeReplica:default:DeepSpeedLLMService pid=9944)[0m INFO 2025-02-12 10:36:51,560 default_DeepSpeedLLMService 8l3iqqfy 321c85cb-ed99-49b3-b56b-1e5cc1b02e94 -- POST /generate 200 12085.0ms
+slurmstepd: error: *** JOB 11 ON queue-dy-intel-1 CANCELLED AT 2025-02-12T12:19:19 DUE TO TIME LIMIT ***

@@ -1,0 +1,27 @@
+TensorFlow installation not found - running with reduced feature set.
+
+NOTE: Using experimental fast data loading logic. To disable, pass
+    "--load_fast=false" and report issues on GitHub. More details:
+    https://github.com/tensorflow/tensorboard/issues/4784
+
+Serving TensorBoard on localhost; to expose to the network, use a proxy or pass --bind_all
+TensorBoard 2.19.0 at http://localhost:43085/ (Press CTRL+C to quit)
+2025-02-12 20:33:58,160	INFO utils.py:112 -- Overwriting previous Ray address (10.0.21.86:52863). Running ray.init() on this node will now connect to the new instance at 10.0.21.86:51863. To override this behavior, pass address=10.0.21.86:52863 to ray.init().
+/scratch/user03/miniconda/envs/venv/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+2025-02-12 20:34:52,406	INFO worker.py:1654 -- Connecting to existing Ray cluster at address: 10.0.21.86:51863...
+2025-02-12 20:34:52,441	INFO worker.py:1832 -- Connected to Ray cluster. View the dashboard at [1m[32m127.0.0.1:46805 [39m[22m
+[36m(ProxyActor pid=10722)[0m INFO 2025-02-12 20:34:57,833 proxy 10.0.21.86 -- Proxy starting on node 2dd2fe91609401d6ecf0b3e6382098ef71ae5b2d701a6b8bac7021de (HTTP port: 8000).
+INFO 2025-02-12 20:34:58,004 serve 10565 -- Started Serve in namespace "serve".
+[36m(ProxyActor pid=10722)[0m INFO 2025-02-12 20:34:57,997 proxy 10.0.21.86 -- Got updated endpoints: {}.
+INFO 2025-02-12 20:34:58,038 serve 10565 -- Connecting to existing Serve app in namespace "serve". New http options will not be applied.
+WARNING 2025-02-12 20:34:58,038 serve 10565 -- The new client HTTP config differs from the existing one in the following fields: ['host', 'location']. The new HTTP config is ignored.
+[36m(ServeController pid=10649)[0m INFO 2025-02-12 20:34:58,065 controller 10649 -- Deploying new version of Deployment(name='DeepSpeedLLMService', app='default') (initial target replicas: 1).
+[36m(ProxyActor pid=10722)[0m INFO 2025-02-12 20:34:58,067 proxy 10.0.21.86 -- Got updated endpoints: {Deployment(name='DeepSpeedLLMService', app='default'): EndpointInfo(route='/', app_is_cross_language=False)}.
+[36m(ProxyActor pid=10722)[0m INFO 2025-02-12 20:34:58,074 proxy 10.0.21.86 -- Started <ray.serve._private.router.SharedRouterLongPollClient object at 0x7e3a500e8ee0>.
+[36m(ServeController pid=10649)[0m INFO 2025-02-12 20:34:58,168 controller 10649 -- Adding 1 replica to Deployment(name='DeepSpeedLLMService', app='default').
+INFO 2025-02-12 20:35:28,259 serve 10565 -- Application 'default' is ready at http://0.0.0.0:8000/.
+INFO 2025-02-12 20:35:28,260 serve 10565 -- Deployed app 'default' successfully.
+[36m(ServeReplica:default:DeepSpeedLLMService pid=10790)[0m Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+[36m(ServeReplica:default:DeepSpeedLLMService pid=10790)[0m INFO 2025-02-12 20:41:15,213 default_DeepSpeedLLMService 2qwhjw62 6bde4b78-b9ec-4696-a0a8-ece93e16f6d2 -- POST /generate 200 12599.5ms
+slurmstepd: error: *** JOB 30 ON queue-dy-intel-1 CANCELLED AT 2025-02-12T21:04:19 DUE TO TIME LIMIT ***

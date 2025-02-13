@@ -1,0 +1,29 @@
+2025-02-12 20:34:20,591	INFO scripts.py:1047 -- [37mLocal node IP[39m: [1m10.0.31.110[22m
+2025-02-12 20:34:21,732	SUCC scripts.py:1063 -- [32m--------------------[39m
+2025-02-12 20:34:21,732	SUCC scripts.py:1064 -- [32mRay runtime started.[39m
+2025-02-12 20:34:21,732	SUCC scripts.py:1065 -- [32m--------------------[39m
+2025-02-12 20:34:21,732	INFO scripts.py:1067 -- To terminate the Ray runtime, run
+2025-02-12 20:34:21,732	INFO scripts.py:1068 -- [1m  ray stop[22m
+2025-02-12 20:34:21,734	INFO scripts.py:1076 -- [36m[1m--block[22m[39m
+2025-02-12 20:34:21,734	INFO scripts.py:1077 -- This command will now block forever until terminated by a signal.
+2025-02-12 20:34:21,734	INFO scripts.py:1080 -- Running subprocesses are monitored and a message will be printed if any of them terminate unexpectedly. Subprocesses exit with SIGTERM will be treated as graceful, thus NOT reported.
+======== Autoscaler status: 2025-02-12 20:34:36.844474 ========
+Node status
+---------------------------------------------------------------
+Active:
+ 1 node_2dd2fe91609401d6ecf0b3e6382098ef71ae5b2d701a6b8bac7021de
+ 1 node_e187d8a8b25a6dfec88c490ee50bc6cbf4b731108f4fb5f5cae6c67b
+Pending:
+ (no pending nodes)
+Recent failures:
+ (no failures)
+
+Resources
+---------------------------------------------------------------
+Usage:
+ 0.0/9.0 CPU
+ 0B/51.36GiB memory
+ 0B/23.70GiB object_store_memory
+
+Demands:
+ (no resource demands)
