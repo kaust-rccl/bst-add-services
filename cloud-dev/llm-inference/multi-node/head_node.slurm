@@ -2,10 +2,16 @@
 #SBATCH --job-name=ray_head
 #SBATCH --output=%x-%j.out
 #SBATCH --error=%x-%j.err
+#SBATCH --nodes=1
+#SBATCH --hint=nomultithread
 #SBATCH --ntasks=1
 #SBATCH --tasks-per-node=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=1
 #SBATCH --time=00:30:00
+
+# Activate Conda environment
+source /scratch/user03/miniconda/bin/activate /scratch/user03/miniconda/envs/venv
+
 
 if [ -z ${NUM_WORKERS} ] ; then
   NUM_WORKERS=1
@@ -15,11 +21,9 @@ fi
 
 export server_port=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
 export dashboard_port=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
-export tensorboard_port=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
+
 export node=$(/bin/hostname -i)
 
-export TB_TMPDIR=$PWD/tboard/${SLURM_JOBID}
-mkdir -p ${TB_TMPDIR}
 
 export redis_password=${SLURM_JOBID}
 export head_node_ip=$(hostname -i)
@@ -30,14 +34,12 @@ ray start --node-ip-address ${head_node_ip} --port ${server_port} --head  \
 	--dashboard-port ${dashboard_port} --dashboard-host=127.0.0.1 \
         --num-cpus 1 --block &
 
-tensorboard --logdir=${PWD}/logs/${SLURM_JOBID} --port=${tensorboard_port} & 
-sleep 20
-
 job_ids=()
 for (( i=1; i<=${NUM_WORKERS}; i++ ))
- do
-   job_ids[$i]=$(sbatch -x $SLURM_NODELIST worker_node.slurm | cut -d " " -f 4)
- done 
+do
+	job_ids[$i]=$(sbatch -x $SLURM_NODELIST worker_node.slurm | cut -d " " -f 4)
+done 
+ 
 
 while [ ! -z $(squeue -n ray_worker -t PD -h -o %A) ]
 do

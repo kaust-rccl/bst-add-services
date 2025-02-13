@@ -3,6 +3,7 @@
 #SBATCH --output=%x-%j.out
 #SBATCH --error=%x-%j.err
 #SBATCH --ntasks=1
+#SBATCH --hint=nomultithread
 #SBATCH --cpus-per-task=8
 #SBATCH --time=00:30:00
 
