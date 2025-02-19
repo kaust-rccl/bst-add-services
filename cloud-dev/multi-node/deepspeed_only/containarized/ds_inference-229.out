@@ -1,0 +1,28 @@
+My guessed rank = 0
+My guessed rank = 1
+[2025-02-19 11:26:21,676] [WARNING] [real_accelerator.py:181:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 11:26:21,676] [WARNING] [real_accelerator.py:181:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 11:26:21,830] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2025-02-19 11:26:21,830] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[DEBUG] PID: 2065
+[DEBUG] PID: 2064
+[DEBUG][DEBUG]  Hostname:Hostname:  cpu-dy-intel-1cpu-dy-intel-1
+
+[DEBUG] CUDA_VISIBLE_DEVICES:[DEBUG]  
+CUDA_VISIBLE_DEVICES: 
+[DEBUG] MASTER_ADDR:[DEBUG]  cpu-dy-intel-1.bst-dev-2.pclusterMASTER_ADDR:
+ cpu-dy-intel-1.bst-dev-2.pcluster
+[DEBUG] MASTER_PORT:[DEBUG]  40597MASTER_PORT:
+ 40597
+[DEBUG] [DEBUG]Process rank from env:  Process rank from env:0 
+1
+[DEBUG] [DEBUG]Initializing process group with gloo backend... 
+Initializing process group with gloo backend...
+[DEBUG][DEBUG]  Process group initialized.Process group initialized.
+
+[DEBUG][DEBUG]  World size:World size:  22
+
+[DEBUG] [DEBUG]Loading model from:  Loading model from:/scratch/user03/gptj
+ /scratch/user03/gptj
+[DEBUG] Tokenizer loaded. Vocabulary size: 50400
+[DEBUG] Tokenizer loaded. Vocabulary size: 50400

@@ -1,0 +1,84 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 12.41it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 12.40it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 12.65it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 12.63it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/deepspeed_multi_nodes.py", line 66, in <module>
+[rank0]:     outputs = ds_engine.module.generate(
+[rank0]: NameError: name 'ds_engine' is not defined
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/deepspeed_multi_nodes.py", line 66, in <module>
+[rank1]:     outputs = ds_engine.module.generate(
+[rank1]: NameError: name 'ds_engine' is not defined
+E0218 18:21:53.233000 136641103141952 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 0 (pid: 5786) of binary: /sw/apps/python/3.10.16/bin/python
+E0218 18:21:53.234000 124901034314816 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 0 (pid: 6547) of binary: /sw/apps/python/3.10.16/bin/python
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 905, in <module>
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    return f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+deepspeed_multi_nodes.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-18_18:21:53
+  host      : cpu-dy-intel-1.bst-dev-2.pcluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 6547)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+deepspeed_multi_nodes.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-18_18:21:53
+  host      : cpu-dy-intel-2.bst-dev-2.pcluster
+  rank      : 1 (local_rank: 0)
+  exitcode  : 1 (pid: 5786)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+srun: error: cpu-dy-intel-2: task 1: Exited with exit code 1
+srun: error: cpu-dy-intel-1: task 0: Exited with exit code 1

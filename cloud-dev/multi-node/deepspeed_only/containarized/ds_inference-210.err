@@ -1,0 +1,78 @@
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [01:26<05:47, 86.79s/it]Loading checkpoint shards:  40%|████      | 2/5 [02:52<04:18, 86.09s/it]Loading checkpoint shards:  60%|██████    | 3/5 [04:15<02:49, 84.60s/it]Loading checkpoint shards:  80%|████████  | 4/5 [05:43<01:26, 86.12s/it]Loading checkpoint shards: 100%|██████████| 5/5 [06:48<00:00, 78.58s/it]Loading checkpoint shards: 100%|██████████| 5/5 [06:48<00:00, 81.78s/it]
+Some weights of GPTJForCausalLM were not initialized from the model checkpoint at /scratch/user03/gptj and are newly initialized: ['lm_head.bias', 'lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [01:26<05:47, 86.81s/it]Loading checkpoint shards:  40%|████      | 2/5 [02:52<04:18, 86.11s/it]Loading checkpoint shards:  60%|██████    | 3/5 [04:15<02:49, 84.55s/it]Loading checkpoint shards:  80%|████████  | 4/5 [05:43<01:26, 86.21s/it]Loading checkpoint shards: 100%|██████████| 5/5 [06:49<00:00, 78.69s/it]Loading checkpoint shards: 100%|██████████| 5/5 [06:49<00:00, 81.85s/it]
+Some weights of GPTJForCausalLM were not initialized from the model checkpoint at /scratch/user03/gptj and are newly initialized: ['lm_head.bias', 'lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
+E0219 09:25:32.981000 5913 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: -11) local_rank: 0 (pid: 5922) of binary: /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python
+E0219 09:25:32.983000 6838 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: -11) local_rank: 0 (pid: 6849) of binary: /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python
+Traceback (most recent call last):
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+Traceback (most recent call last):
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 922, in <module>
+    return _run_code(code, main_globals, None,
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 922, in <module>
+    main()
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    main()
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 918, in main
+    return f(*args, **kwargs)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 909, in run
+    run(args)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    elastic_launch(
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-19_09:25:32
+  host      : cpu-dy-intel-2.bst-dev-2.pcluster
+  rank      : 1 (local_rank: 0)
+  exitcode  : -11 (pid: 5922)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 5922
+============================================================
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-19_09:25:32
+  host      : cpu-dy-intel-1.bst-dev-2.pcluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : -11 (pid: 6849)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 6849
+============================================================
+srun: error: cpu-dy-intel-1: task 0: Exited with exit code 1
+srun: error: cpu-dy-intel-2: task 1: Exited with exit code 1

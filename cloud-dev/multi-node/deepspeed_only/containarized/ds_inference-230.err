@@ -1,0 +1,81 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/oneccl_bindings_for_pytorch/__init__.py:25: UserWarning: Warning: Cannot load xpu CCL. CCL doesn't work for XPU device due to /scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/oneccl_bindings_for_pytorch/lib/liboneccl_bindings_for_pytorch_xpu.so: cannot open shared object file: No such file or directory
+  warnings.warn(f"Warning: Cannot load xpu CCL. CCL doesn't work for XPU device due to {e}")
+/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/oneccl_bindings_for_pytorch/__init__.py:25: UserWarning: Warning: Cannot load xpu CCL. CCL doesn't work for XPU device due to /scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/oneccl_bindings_for_pytorch/lib/liboneccl_bindings_for_pytorch_xpu.so: cannot open shared object file: No such file or directory
+  warnings.warn(f"Warning: Cannot load xpu CCL. CCL doesn't work for XPU device due to {e}")
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.92it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.68it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.92it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.68it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py", line 57, in <module>
+[rank1]:     ds_engine = deepspeed.init_inference(
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/__init__.py", line 362, in init_inference
+[rank1]:     ds_inference_config = DeepSpeedInferenceConfig(**config_dict)
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/runtime/config_utils.py", line 57, in __init__
+[rank1]:     super().__init__(**data)
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/pydantic/main.py", line 214, in __init__
+[rank1]:     validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+[rank1]: pydantic_core._pydantic_core.ValidationError: 1 validation error for DeepSpeedInferenceConfig
+[rank1]: inference
+[rank1]:   Extra inputs are not permitted [type=extra_forbidden, input_value={'replace_with_kernel_inj...lse, 'dtype': 'float32'}, input_type=dict]
+[rank1]:     For further information visit https://errors.pydantic.dev/2.10/v/extra_forbidden
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py", line 57, in <module>
+[rank0]:     ds_engine = deepspeed.init_inference(
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/__init__.py", line 362, in init_inference
+[rank0]:     ds_inference_config = DeepSpeedInferenceConfig(**config_dict)
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/runtime/config_utils.py", line 57, in __init__
+[rank0]:     super().__init__(**data)
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/pydantic/main.py", line 214, in __init__
+[rank0]:     validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+[rank0]: pydantic_core._pydantic_core.ValidationError: 1 validation error for DeepSpeedInferenceConfig
+[rank0]: inference
+[rank0]:   Extra inputs are not permitted [type=extra_forbidden, input_value={'replace_with_kernel_inj...lse, 'dtype': 'float32'}, input_type=dict]
+[rank0]:     For further information visit https://errors.pydantic.dev/2.10/v/extra_forbidden
+E0219 11:35:28.377000 3236 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 3243) of binary: /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python
+Traceback (most recent call last):
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 922, in <module>
+    main()
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2025-02-19_11:35:28
+  host      : cpu-dy-intel-1.bst-dev-2.pcluster
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 3244)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-19_11:35:28
+  host      : cpu-dy-intel-1.bst-dev-2.pcluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 3243)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+srun: error: cpu-dy-intel-1: task 0: Exited with exit code 1

@@ -1,0 +1,90 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.29s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.70it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.44it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.13s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.88it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.61it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Using /home/user03/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...
+Emitting ninja build file /home/user03/.cache/torch_extensions/py310_cu124/deepspeed_shm_comm/build.ninja...
+Building extension module deepspeed_shm_comm...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module deepspeed_shm_comm...
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Using /home/user03/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...
+Emitting ninja build file /home/user03/.cache/torch_extensions/py310_cu124/deepspeed_shm_comm/build.ninja...
+Building extension module deepspeed_shm_comm...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module deepspeed_shm_comm...
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+E0218 19:01:36.028000 137661042682944 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: -11) local_rank: 0 (pid: 7737) of binary: /sw/apps/python/3.10.16/bin/python
+E0218 19:01:36.033000 127327596743744 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: -11) local_rank: 0 (pid: 4266) of binary: /sw/apps/python/3.10.16/bin/python
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+======================================================
+deepspeed_multi_nodes.py FAILED
+------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-18_19:01:36
+  host      : cpu-dy-intel-1.bst-dev-2.pcluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : -11 (pid: 7737)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 7737
+======================================================
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+======================================================
+deepspeed_multi_nodes.py FAILED
+------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-18_19:01:36
+  host      : cpu-dy-intel-5.bst-dev-2.pcluster
+  rank      : 1 (local_rank: 0)
+  exitcode  : -11 (pid: 4266)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 4266
+======================================================
+srun: error: cpu-dy-intel-1: task 0: Exited with exit code 1
+srun: error: cpu-dy-intel-5: task 1: Exited with exit code 1

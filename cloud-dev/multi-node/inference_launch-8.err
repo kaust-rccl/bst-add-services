@@ -1,0 +1,173 @@
+Error while loading conda entry point: conda-anaconda-tos (No module named 'pydantic_core._pydantic_core')
+
+CondaError: Run 'conda init' before 'conda activate'
+
+[2025-02-16 21:29:31,604 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launch.py:208: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  main()
+[2025-02-16 21:30:01,622 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:30:07,631 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:30:37,632 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:30:43,637 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:31:13,639 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:31:19,643 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:31:49,645 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:31:55,648 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:32:25,649 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:32:31,653 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:33:01,655 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:33:07,659 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:33:37,660 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:33:43,665 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:34:13,666 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:34:19,670 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:34:49,671 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:34:55,675 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:35:25,676 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:35:31,681 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:36:01,682 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:36:07,686 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:36:37,687 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:36:43,692 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:37:13,693 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:37:19,698 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:37:49,699 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:37:55,703 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:38:25,704 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:38:31,709 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:39:01,711 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:39:07,715 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:39:37,716 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:39:43,824 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:40:13,855 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:40:19,864 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:40:49,866 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+[2025-02-16 21:40:55,871 W 4912 4912] gcs_rpc_client.h:148: Failed to connect to GCS at address 10.0.132.30:60991 within 5 seconds.
+[2025-02-16 21:41:25,872 W 4912 4912] gcs_client.cc:178: Failed to get cluster ID from GCS server: TimedOut: Timed out while waiting for GCS to become available.
+Traceback (most recent call last):
+  File "/scratch/user03/miniconda/envs/myenv/bin/ray", line 8, in <module>
+    sys.exit(main())
+  File "/scratch/user03/miniconda/envs/myenv/lib/python3.10/site-packages/ray/scripts/scripts.py", line 2691, in main
+    return cli()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/scratch/user03/miniconda/envs/myenv/lib/python3.10/site-packages/ray/autoscaler/_private/cli_logger.py", line 823, in wrapper
+    return f(*args, **kwargs)
+  File "/scratch/user03/miniconda/envs/myenv/lib/python3.10/site-packages/ray/scripts/scripts.py", line 1049, in start
+    node = ray._private.node.Node(
+  File "/scratch/user03/miniconda/envs/myenv/lib/python3.10/site-packages/ray/_private/node.py", line 159, in __init__
+    self._init_gcs_client()
+  File "/scratch/user03/miniconda/envs/myenv/lib/python3.10/site-packages/ray/_private/node.py", line 778, in _init_gcs_client
+    raise RuntimeError(
+RuntimeError: Failed to connect to GCS. Last connection error: Traceback (most recent call last):
+  File "/scratch/user03/miniconda/envs/myenv/lib/python3.10/site-packages/ray/_private/node.py", line 741, in _init_gcs_client
+    client = GcsClient(
+  File "python/ray/_raylet.pyx", line 2719, in ray._raylet.GcsClient.__cinit__
+  File "python/ray/includes/gcs_client.pxi", line 64, in ray._raylet.InnerGcsClient.standalone
+  File "python/ray/includes/common.pxi", line 118, in ray._raylet.check_status_timeout_as_rpc_error
+ray.exceptions.RpcError: Timed out while waiting for GCS to become available.
+
+[W216 21:44:45.584338901 socket.cpp:428] [c10d] While waitForInput, poolFD failed with (errno: 0 - Success).
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/typing_extensions.py", line 2853, in wrapper
+    return arg(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 255, in launch_agent
+    result = agent.run()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 680, in run
+    result = self._invoke_run(role)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 829, in _invoke_run
+    self._initialize_workers(self._worker_group)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 652, in _initialize_workers
+    self._rendezvous(worker_group)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+[W216 21:44:45.911138477 socket.cpp:428] [c10d] While waitForInput, poolFD failed with (errno: 0 - Success).
+    result = f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 502, in _rendezvous
+    workers = self._assign_worker_ranks(store, group_rank, group_world_size, spec)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 577, in _assign_worker_ranks
+    role_infos_bytes = store.multi_get(
+torch.distributed.DistStoreError: Socket Timeout
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launch.py", line 208, in <module>
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/typing_extensions.py", line 2853, in wrapper
+    return arg(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launch.py", line 204, in main
+    launch(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launch.py", line 189, in launch
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 255, in launch_agent
+    result = agent.run()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 680, in run
+    result = self._invoke_run(role)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 829, in _invoke_run
+    self._initialize_workers(self._worker_group)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 652, in _initialize_workers
+    self._rendezvous(worker_group)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 502, in _rendezvous
+    workers = self._assign_worker_ranks(store, group_rank, group_world_size, spec)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 577, in _assign_worker_ranks
+    role_infos_bytes = store.multi_get(
+torch.distributed.DistStoreError: Socket Timeout
+srun: error: cpu-dy-intel-2: task 1: Exited with exit code 1
+srun: error: cpu-dy-intel-1: task 0: Exited with exit code 1

@@ -1,0 +1,64 @@
+[2025-02-19 09:18:21,269] [WARNING] [real_accelerator.py:181:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 09:18:21,313] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2025-02-19 09:18:21,423] [WARNING] [real_accelerator.py:181:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 09:18:21,469] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[DEBUG] PID: 6849
+[DEBUG] Hostname: cpu-dy-intel-1
+[DEBUG] CUDA_VISIBLE_DEVICES: 
+[DEBUG] MASTER_ADDR: cpu-dy-intel-1.bst-dev-2.pcluster
+[DEBUG] MASTER_PORT: 42845
+[DEBUG] Process rank from env: 0
+[DEBUG] Initializing process group with gloo backend...
+[DEBUG] PID: 5922
+[DEBUG] Hostname: cpu-dy-intel-2
+[DEBUG] CUDA_VISIBLE_DEVICES: 
+[DEBUG] MASTER_ADDR: cpu-dy-intel-1.bst-dev-2.pcluster
+[DEBUG] MASTER_PORT: 42845
+[DEBUG] Process rank from env: 1
+[DEBUG] Initializing process group with gloo backend...
+[DEBUG] Process group initialized.
+[DEBUG] World size: 2
+[DEBUG] Loading model from: /scratch/user03/gptj
+[DEBUG] Process group initialized.
+[DEBUG] World size: 2
+[DEBUG] Loading model from: /scratch/user03/gptj
+[DEBUG] Tokenizer loaded. Vocabulary size: 50400
+[DEBUG] Tokenizer loaded. Vocabulary size: 50400
+[DEBUG] Model loaded and moved to CPU.
+[DEBUG] Loading DeepSpeed config from: /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+[DEBUG] DeepSpeed config contents: {
+    "tensor_parallel": {
+        "tp_size": 2
+    }
+}
+
+[DEBUG] Initializing DeepSpeed inference engine...
+[2025-02-19 09:25:28,647] [INFO] [logging.py:128:log_dist] [Rank -1] DeepSpeed info: version=0.16.4+14b3cce4, git-hash=14b3cce4, git-branch=master
+[2025-02-19 09:25:28,680] [INFO] [logging.py:128:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-19 09:25:28,683] [INFO] [comm.py:658:init_distributed] cdb=None
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+[DEBUG] Model loaded and moved to CPU.
+[DEBUG] Loading DeepSpeed config from: /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+[DEBUG] DeepSpeed config contents: {
+    "tensor_parallel": {
+        "tp_size": 2
+    }
+}
+
+[DEBUG] Initializing DeepSpeed inference engine...
+[2025-02-19 09:25:28,885] [INFO] [logging.py:128:log_dist] [Rank -1] DeepSpeed info: version=0.16.4+14b3cce4, git-hash=14b3cce4, git-branch=master
+[2025-02-19 09:25:28,906] [INFO] [logging.py:128:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-19 09:25:28,909] [INFO] [comm.py:658:init_distributed] cdb=None
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+AutoTP:  [(<class 'transformers.models.gptj.modeling_gptj.GPTJBlock'>, ['attn.out_proj', 'mlp.fc_out'])]
+AutoTP:  [(<class 'transformers.models.gptj.modeling_gptj.GPTJBlock'>, ['attn.out_proj', 'mlp.fc_out'])]
+[DEBUG] DeepSpeed inference engine initialized successfully.
+[DEBUG] DeepSpeed inference engine initialized successfully.
+[DEBUG] Pad token not set; using eos_token_id: 50256
+[Rank 0] DeepSpeed Engine Initialized.
+[DEBUG] Running inference on prompt: What is AI?
+[DEBUG] Pad token not set; using eos_token_id: 50256
+[Rank 1] DeepSpeed Engine Initialized.
+[DEBUG] Running inference on prompt: What is AI?
+[DEBUG] Prepared inputs: {'input_ids': tensor([[2061,  318, 9552,   30]]), 'attention_mask': tensor([[1, 1, 1, 1]])}
+[DEBUG] Prepared inputs: {'input_ids': tensor([[2061,  318, 9552,   30]]), 'attention_mask': tensor([[1, 1, 1, 1]])}

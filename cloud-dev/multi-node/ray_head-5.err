@@ -1,0 +1,2 @@
+/var/spool/slurmd/job00005/slurm_script: line 24: /scratch/user03/llm-inference/multi-node/head_node_info: No such file or directory
+slurmstepd: error: *** JOB 5 ON cpu-dy-intel-1 CANCELLED AT 2025-02-16T20:55:27 ***

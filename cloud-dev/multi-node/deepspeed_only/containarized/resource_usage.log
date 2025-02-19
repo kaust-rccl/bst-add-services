@@ -1,0 +1,459 @@
+Resource usage at Wed Feb 19 09:44:09 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root        1663  2.0  0.0      0     0 ?        I    09:43   0:00 [ptlrpcd_rcv]
+root           1  1.0  0.0 168340 13420 ?        Ss   09:40   0:01 /sbin/init
+root        1348  0.5  0.2 1358072 101632 ?      Ssl  09:42   0:00 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml -envconfig /opt/aws/amazon-cloudwatch-agent/etc/env-config.json -otelconfig /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.yaml -pidfile /opt/aws/amazon-cloudwatch-agent/var/amazon-cloudwatch-agent.pid
+root        1887  0.4  0.0  32800 25728 ?        Ss   09:43   0:00 /opt/parallelcluster/pyenv/versions/3.9.20/envs/cookbook_virtualenv/bin/python3.9 /opt/parallelcluster/pyenv/versions/3.9.20/envs/cookbook_virtualenv/bin/supervisord -n -c /etc/supervisord.conf
+pcluste+    1932  0.4  0.0  33024 25964 ?        S    09:43   0:00 /opt/parallelcluster/pyenv/versions/3.9.20/envs/node_virtualenv/bin/python3.9 /opt/parallelcluster/pyenv/versions/3.9.20/envs/node_virtualenv/bin/computemgtd
+root         675  0.3  0.0 1690744 34560 ?       Ssl  09:41   0:00 /usr/lib/snapd/snapd
+root         728  0.2  0.0 2054036 19840 ?       Ssl  09:41   0:00 /snap/amazon-ssm-agent/7993/amazon-ssm-agent
+root          21  0.1  0.0      0     0 ?        S    09:40   0:00 [migration/1]
+root          27  0.1  0.0      0     0 ?        S    09:40   0:00 [migration/2]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       462Mi        39Gi       1.0Mi       787Mi        39Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:45:09 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2023 33.1  8.2 30195892 3478680 ?    Isl  09:44   0:16 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+1003        2012  4.6  0.3 1063612 134920 ?      Sl   09:44   0:02 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-3:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1651  1.5  0.0      0     0 ?        S    09:43   0:01 [socknal_sd01_00]
+root        1652  1.5  0.0      0     0 ?        S    09:43   0:01 [socknal_sd01_01]
+root        1653  1.5  0.0      0     0 ?        R    09:43   0:01 [socknal_sd01_02]
+root        1663  0.9  0.0      0     0 ?        I    09:43   0:00 [ptlrpcd_rcv]
+root           1  0.7  0.0 168340 13420 ?        Ss   09:40   0:01 /sbin/init
+root        1664  0.6  0.0      0     0 ?        I    09:43   0:00 [ptlrpcd_00_00]
+root        1666  0.6  0.0      0     0 ?        I    09:43   0:00 [ptlrpcd_00_02]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       2.9Gi        35Gi       1.0Mi       2.0Gi        36Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:46:09 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2023 35.0 23.6 30195892 9964824 ?    Isl  09:44   0:38 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1651  3.1  0.0      0     0 ?        S    09:43   0:05 [socknal_sd01_00]
+root        1652  3.1  0.0      0     0 ?        S    09:43   0:05 [socknal_sd01_01]
+root        1653  3.1  0.0      0     0 ?        S    09:43   0:05 [socknal_sd01_02]
+1003        2012  2.4  0.3 1063612 134920 ?      Sl   09:44   0:02 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-3:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1664  1.4  0.0      0     0 ?        I    09:43   0:02 [ptlrpcd_00_00]
+root        1666  1.3  0.0      0     0 ?        I    09:43   0:02 [ptlrpcd_00_02]
+root        1665  1.2  0.0      0     0 ?        I    09:43   0:02 [ptlrpcd_00_01]
+root        1667  1.2  0.0      0     0 ?        I    09:43   0:02 [ptlrpcd_00_03]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       6.2Gi        28Gi       1.0Mi       5.1Gi        33Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:47:09 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2023 35.8 27.1 30176004 11464008 ?   Isl  09:44   1:01 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        2291 13.5  0.0 1838844 38692 ?       Ssl  09:46   0:02 /usr/lib/snapd/snapd
+root        1651  3.9  0.0      0     0 ?        S    09:43   0:08 [socknal_sd01_00]
+root        1652  3.9  0.0      0     0 ?        S    09:43   0:08 [socknal_sd01_01]
+root        1653  3.9  0.0      0     0 ?        S    09:43   0:08 [socknal_sd01_02]
+root        1664  1.7  0.0      0     0 ?        I    09:43   0:04 [ptlrpcd_00_00]
+root        1666  1.7  0.0      0     0 ?        I    09:43   0:04 [ptlrpcd_00_02]
+1003        2012  1.7  0.3 1063612 134920 ?      Sl   09:44   0:03 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-3:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1676  1.6  0.0      0     0 ?        I    09:43   0:03 [ptlrpcd_03_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       9.5Gi        22Gi       1.0Mi       8.4Gi        30Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:48:09 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2023 36.4 31.2 30044932 13167988 ?   Rsl  09:44   1:24 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1651  4.3  0.0      0     0 ?        R    09:43   0:12 [socknal_sd01_00]
+root        1652  4.3  0.0      0     0 ?        S    09:43   0:12 [socknal_sd01_01]
+root        1653  4.3  0.0      0     0 ?        S    09:43   0:12 [socknal_sd01_02]
+root        2291  3.5  0.0 1838844 38692 ?       Ssl  09:46   0:02 /usr/lib/snapd/snapd
+root        1664  1.9  0.0      0     0 ?        R    09:43   0:05 [ptlrpcd_00_00]
+root        1666  1.9  0.0      0     0 ?        I    09:43   0:05 [ptlrpcd_00_02]
+root        1678  1.8  0.0      0     0 ?        I    09:43   0:05 [ptlrpcd_03_02]
+root        1672  1.7  0.0      0     0 ?        I    09:43   0:05 [ptlrpcd_02_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        12Gi        15Gi       1.0Mi        11Gi        26Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:48:38 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root        1659  2.8  0.0      0     0 ?        I    09:48   0:00 [ptlrpcd_rcv]
+root           1  1.4  0.0 168308 13188 ?        Ss   09:46   0:01 /sbin/init
+root        1974  1.0  0.0  82904  8116 ?        Sl   09:48   0:00 slurmstepd: [223.batch]
+root        1883  0.7  0.0  32800 25784 ?        Ss   09:48   0:00 /opt/parallelcluster/pyenv/versions/3.9.20/envs/cookbook_virtualenv/bin/python3.9 /opt/parallelcluster/pyenv/versions/3.9.20/envs/cookbook_virtualenv/bin/supervisord -n -c /etc/supervisord.conf
+pcluste+    1928  0.7  0.0  33024 26104 ?        S    09:48   0:00 /opt/parallelcluster/pyenv/versions/3.9.20/envs/node_virtualenv/bin/python3.9 /opt/parallelcluster/pyenv/versions/3.9.20/envs/node_virtualenv/bin/computemgtd
+root        1342  0.6  0.2 1358072 102784 ?      Ssl  09:47   0:00 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml -envconfig /opt/aws/amazon-cloudwatch-agent/etc/env-config.json -otelconfig /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.yaml -pidfile /opt/aws/amazon-cloudwatch-agent/var/amazon-cloudwatch-agent.pid
+root         670  0.5  0.0 1764476 34596 ?       Ssl  09:46   0:00 /usr/lib/snapd/snapd
+root         728  0.3  0.0 2053524 20224 ?       Ssl  09:46   0:00 /snap/amazon-ssm-agent/7993/amazon-ssm-agent
+root          21  0.1  0.0      0     0 ?        S    09:46   0:00 [migration/1]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       459Mi        39Gi       1.0Mi       788Mi        39Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:49:09 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2023 36.5 46.6 30044932 19687028 ?   Rsl  09:44   1:46 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1653  4.7  0.0      0     0 ?        S    09:43   0:16 [socknal_sd01_02]
+root        1651  4.6  0.0      0     0 ?        S    09:43   0:16 [socknal_sd01_00]
+root        1652  4.6  0.0      0     0 ?        S    09:43   0:16 [socknal_sd01_01]
+root        1664  2.1  0.0      0     0 ?        I    09:43   0:07 [ptlrpcd_00_00]
+root        1666  2.1  0.0      0     0 ?        I    09:43   0:07 [ptlrpcd_00_02]
+root        2291  2.0  0.0 1838844 38692 ?       Ssl  09:46   0:02 /usr/lib/snapd/snapd
+root        1674  1.9  0.0      0     0 ?        I    09:43   0:06 [ptlrpcd_02_02]
+root        1676  1.9  0.0      0     0 ?        I    09:43   0:06 [ptlrpcd_03_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        16Gi       9.4Gi       1.0Mi        14Gi        23Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:49:38 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2020 28.0  5.7 30496960 2426164 ?    Isl  09:48   0:14 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+1003        2005  4.7  0.3 1062272 135024 ?      Sl   09:48   0:02 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-7:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1647  1.1  0.0      0     0 ?        S    09:48   0:01 [socknal_sd01_00]
+root        1648  1.1  0.0      0     0 ?        S    09:48   0:01 [socknal_sd01_01]
+root        1649  1.1  0.0      0     0 ?        S    09:48   0:01 [socknal_sd01_02]
+root           1  1.0  0.0 168308 13188 ?        Ss   09:46   0:01 /sbin/init
+root        1659  1.0  0.0      0     0 ?        I    09:48   0:00 [ptlrpcd_rcv]
+root        1342  0.5  0.2 1358072 103296 ?      Ssl  09:47   0:00 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml -envconfig /opt/aws/amazon-cloudwatch-agent/etc/env-config.json -otelconfig /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.yaml -pidfile /opt/aws/amazon-cloudwatch-agent/var/amazon-cloudwatch-agent.pid
+root        1660  0.4  0.0      0     0 ?        R    09:48   0:00 [ptlrpcd_00_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       2.3Gi        36Gi       1.0Mi       1.5Gi        37Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:50:09 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2023 35.4 47.5 30044932 20078128 ?   Isl  09:44   2:04 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1651  4.7  0.0      0     0 ?        S    09:43   0:19 [socknal_sd01_00]
+root        1652  4.7  0.0      0     0 ?        S    09:43   0:19 [socknal_sd01_01]
+root        1653  4.7  0.0      0     0 ?        S    09:43   0:19 [socknal_sd01_02]
+root        1664  2.1  0.0      0     0 ?        I    09:43   0:08 [ptlrpcd_00_00]
+root        1666  2.1  0.0      0     0 ?        I    09:43   0:08 [ptlrpcd_00_02]
+root        1672  1.9  0.0      0     0 ?        I    09:43   0:07 [ptlrpcd_02_00]
+root        1674  1.9  0.0      0     0 ?        I    09:43   0:07 [ptlrpcd_02_02]
+root        1676  1.9  0.0      0     0 ?        I    09:43   0:07 [ptlrpcd_03_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        18Gi       4.3Gi       1.0Mi        17Gi        20Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:50:39 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2020 27.3 17.0 30496960 7188660 ?    Isl  09:48   0:30 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1647  2.5  0.0      0     0 ?        S    09:48   0:03 [socknal_sd01_00]
+root        1648  2.5  0.0      0     0 ?        R    09:48   0:03 [socknal_sd01_01]
+root        1649  2.5  0.0      0     0 ?        S    09:48   0:03 [socknal_sd01_02]
+1003        2005  2.4  0.3 1062272 135024 ?      Sl   09:48   0:02 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-7:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1660  1.0  0.0      0     0 ?        I    09:48   0:01 [ptlrpcd_00_00]
+root        1662  1.0  0.0      0     0 ?        I    09:48   0:01 [ptlrpcd_00_02]
+root        1668  1.0  0.0      0     0 ?        I    09:48   0:01 [ptlrpcd_02_00]
+root        1672  1.0  0.0      0     0 ?        I    09:48   0:01 [ptlrpcd_03_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       4.8Gi        31Gi       1.0Mi       3.7Gi        34Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:51:09 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2023 34.3 53.6 33715516 22645700 ?   Rsl  09:44   2:21 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1651  4.7  0.0      0     0 ?        S    09:43   0:22 [socknal_sd01_00]
+root        1652  4.7  0.0      0     0 ?        S    09:43   0:22 [socknal_sd01_01]
+root        1653  4.7  0.0      0     0 ?        S    09:43   0:22 [socknal_sd01_02]
+root        1664  2.1  0.0      0     0 ?        I    09:43   0:10 [ptlrpcd_00_00]
+root        1666  2.1  0.0      0     0 ?        I    09:43   0:10 [ptlrpcd_00_02]
+root        1672  1.9  0.0      0     0 ?        I    09:43   0:08 [ptlrpcd_02_00]
+root        1674  1.9  0.0      0     0 ?        I    09:43   0:09 [ptlrpcd_02_02]
+root        1676  1.9  0.0      0     0 ?        I    09:43   0:09 [ptlrpcd_03_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        21Gi       1.6Gi       1.0Mi        17Gi        18Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:51:39 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2020 27.5 17.1 30477072 7220540 ?    Rsl  09:48   0:47 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1647  3.2  0.0      0     0 ?        S    09:48   0:06 [socknal_sd01_00]
+root        1648  3.2  0.0      0     0 ?        S    09:48   0:06 [socknal_sd01_01]
+root        1649  3.2  0.0      0     0 ?        S    09:48   0:06 [socknal_sd01_02]
+1003        2005  1.7  0.3 1062272 135024 ?      Sl   09:48   0:03 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-7:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1660  1.3  0.0      0     0 ?        I    09:48   0:02 [ptlrpcd_00_00]
+root        1662  1.3  0.0      0     0 ?        I    09:48   0:02 [ptlrpcd_00_02]
+root        1672  1.3  0.0      0     0 ?        I    09:48   0:02 [ptlrpcd_03_00]
+root        1674  1.3  0.0      0     0 ?        R    09:48   0:02 [ptlrpcd_03_02]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       7.3Gi        26Gi       1.0Mi       6.1Gi        32Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:52:09 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2023 33.5 57.3 28996244 24196904 ?   Isl  09:44   2:38 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1651  4.7  0.0      0     0 ?        S    09:43   0:25 [socknal_sd01_00]
+root        1652  4.7  0.0      0     0 ?        S    09:43   0:25 [socknal_sd01_01]
+root        1653  4.7  0.0      0     0 ?        S    09:43   0:25 [socknal_sd01_02]
+root        1664  2.1  0.0      0     0 ?        I    09:43   0:11 [ptlrpcd_00_00]
+root        1666  2.1  0.0      0     0 ?        I    09:43   0:11 [ptlrpcd_00_02]
+root        1672  1.9  0.0      0     0 ?        I    09:43   0:10 [ptlrpcd_02_00]
+root        1674  1.9  0.0      0     0 ?        I    09:43   0:10 [ptlrpcd_02_02]
+root        1676  1.9  0.0      0     0 ?        I    09:43   0:10 [ptlrpcd_03_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        22Gi        15Gi       1.0Mi       2.4Gi        17Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:52:39 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2020 27.6 28.7 30477072 12148540 ?   Isl  09:48   1:03 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        2282 13.3  0.0 1838844 39636 ?       Ssl  09:52   0:04 /usr/lib/snapd/snapd
+root        1647  3.6  0.0      0     0 ?        S    09:48   0:09 [socknal_sd01_00]
+root        1648  3.6  0.0      0     0 ?        S    09:48   0:09 [socknal_sd01_01]
+root        1649  3.6  0.0      0     0 ?        S    09:48   0:09 [socknal_sd01_02]
+root        1660  1.5  0.0      0     0 ?        I    09:48   0:04 [ptlrpcd_00_00]
+root        1662  1.5  0.0      0     0 ?        I    09:48   0:04 [ptlrpcd_00_02]
+root        1672  1.5  0.0      0     0 ?        I    09:48   0:04 [ptlrpcd_03_00]
+root        1674  1.5  0.0      0     0 ?        I    09:48   0:04 [ptlrpcd_03_02]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       9.9Gi        21Gi       1.0Mi       8.8Gi        29Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:53:10 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2023 31.4 56.6 25338224 23916356 ?   Ssl  09:44   2:47 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1651  4.5  0.0      0     0 ?        S    09:43   0:26 [socknal_sd01_00]
+root        1652  4.5  0.0      0     0 ?        S    09:43   0:26 [socknal_sd01_01]
+root        1653  4.5  0.0      0     0 ?        S    09:43   0:26 [socknal_sd01_02]
+root        1664  2.0  0.0      0     0 ?        I    09:43   0:12 [ptlrpcd_00_00]
+root        1666  2.0  0.0      0     0 ?        I    09:43   0:12 [ptlrpcd_00_02]
+root        1672  1.8  0.0      0     0 ?        I    09:43   0:10 [ptlrpcd_02_00]
+root        1674  1.8  0.0      0     0 ?        I    09:43   0:10 [ptlrpcd_02_02]
+root        1676  1.8  0.0      0     0 ?        I    09:43   0:10 [ptlrpcd_03_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        23Gi        12Gi       1.0Mi       3.6Gi        16Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:53:39 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2020 29.2 32.1 30346000 13559152 ?   Isl  09:48   1:25 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        2282  4.5  0.0 1838844 39636 ?       Ssl  09:52   0:04 /usr/lib/snapd/snapd
+root        1647  4.0  0.0      0     0 ?        S    09:48   0:13 [socknal_sd01_00]
+root        1648  4.0  0.0      0     0 ?        R    09:48   0:13 [socknal_sd01_01]
+root        1649  4.0  0.0      0     0 ?        S    09:48   0:13 [socknal_sd01_02]
+root        1660  1.6  0.0      0     0 ?        I    09:48   0:05 [ptlrpcd_00_00]
+root        1662  1.6  0.0      0     0 ?        I    09:48   0:05 [ptlrpcd_00_02]
+root        1668  1.6  0.0      0     0 ?        I    09:48   0:05 [ptlrpcd_02_00]
+root        1670  1.6  0.0      0     0 ?        I    09:48   0:05 [ptlrpcd_02_02]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        13Gi        15Gi       1.0Mi        11Gi        26Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:54:39 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2020 30.9 37.3 30346000 15749788 ?   Isl  09:48   1:48 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1647  4.4  0.0      0     0 ?        S    09:48   0:17 [socknal_sd01_00]
+root        1648  4.4  0.0      0     0 ?        S    09:48   0:17 [socknal_sd01_01]
+root        1649  4.4  0.0      0     0 ?        S    09:48   0:17 [socknal_sd01_02]
+root        2282  2.7  0.0 1838844 39636 ?       Ssl  09:52   0:04 /usr/lib/snapd/snapd
+root        1660  1.8  0.0      0     0 ?        I    09:48   0:07 [ptlrpcd_00_00]
+root        1662  1.8  0.0      0     0 ?        I    09:48   0:07 [ptlrpcd_00_02]
+root        1672  1.8  0.0      0     0 ?        I    09:48   0:07 [ptlrpcd_03_00]
+root        1674  1.8  0.0      0     0 ?        I    09:48   0:07 [ptlrpcd_03_02]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        16Gi       8.4Gi       1.0Mi        15Gi        23Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:55:39 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2020 31.8 53.2 30346000 22469148 ?   Isl  09:48   2:11 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1647  4.6  0.0      0     0 ?        S    09:48   0:21 [socknal_sd01_00]
+root        1648  4.6  0.0      0     0 ?        S    09:48   0:21 [socknal_sd01_01]
+root        1649  4.6  0.0      0     0 ?        S    09:48   0:21 [socknal_sd01_02]
+root        1660  1.9  0.0      0     0 ?        I    09:48   0:08 [ptlrpcd_00_00]
+root        1662  1.9  0.0      0     0 ?        I    09:48   0:08 [ptlrpcd_00_02]
+root        1672  1.9  0.0      0     0 ?        I    09:48   0:08 [ptlrpcd_03_00]
+root        1674  1.9  0.0      0     0 ?        I    09:48   0:08 [ptlrpcd_03_02]
+root        2282  1.9  0.0 1838844 36624 ?       Ssl  09:52   0:04 /usr/lib/snapd/snapd
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        20Gi       1.7Gi       1.0Mi        18Gi        19Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 09:56:39 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        2020 32.8 55.3 29297312 23338348 ?   Isl  09:48   2:34 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1647  4.9  0.0      0     0 ?        S    09:48   0:25 [socknal_sd01_00]
+root        1648  4.9  0.0      0     0 ?        R    09:48   0:25 [socknal_sd01_01]
+root        1649  4.8  0.0      0     0 ?        S    09:48   0:25 [socknal_sd01_02]
+root        1660  2.0  0.0      0     0 ?        I    09:48   0:10 [ptlrpcd_00_00]
+root        1662  2.0  0.0      0     0 ?        I    09:48   0:10 [ptlrpcd_00_02]
+root        1672  2.0  0.0      0     0 ?        I    09:48   0:10 [ptlrpcd_03_00]
+root        1674  2.0  0.0      0     0 ?        I    09:48   0:10 [ptlrpcd_03_02]
+root        1668  1.9  0.0      0     0 ?        I    09:48   0:10 [ptlrpcd_02_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        22Gi        16Gi       1.0Mi       1.8Gi        17Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 10:34:24 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root        2262  6.8  0.0 1765368 39800 ?       Ssl  10:33   0:02 /usr/lib/snapd/snapd
+root        2956  1.0  0.0  82904  8044 ?        Sl   10:34   0:00 slurmstepd: [226.batch]
+root           1  0.6  0.0 168356 13284 ?        Ss   10:27   0:02 /sbin/init
+root        1345  0.4  0.2 1358328 98440 ?       Ssl  10:29   0:01 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml -envconfig /opt/aws/amazon-cloudwatch-agent/etc/env-config.json -otelconfig /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.yaml -pidfile /opt/aws/amazon-cloudwatch-agent/var/amazon-cloudwatch-agent.pid
+root        1662  0.3  0.0      0     0 ?        I    10:30   0:00 [ptlrpcd_rcv]
+root         287  0.1  0.0  12272  7004 ?        Ss   10:28   0:00 /lib/systemd/systemd-udevd
+root         445  0.1  0.0      0     0 ?        I    10:28   0:00 [kworker/u32:5-flush-259:0]
+root         724  0.1  0.0 2054036 18604 ?       Ssl  10:28   0:00 /snap/amazon-ssm-agent/7993/amazon-ssm-agent
+root        1650  0.1  0.0      0     0 ?        S    10:30   0:00 [socknal_sd01_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       670Mi        35Gi       1.0Mi       4.5Gi        39Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 10:35:24 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        3005 37.0  8.8 30497968 3740312 ?    Isl  10:34   0:18 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+1003        2987  5.6  0.3 1063616 134944 ?      Sl   10:34   0:03 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-5:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        2262  2.8  0.0 1765368 39800 ?       Ssl  10:33   0:02 /usr/lib/snapd/snapd
+root        1650  0.6  0.0      0     0 ?        S    10:30   0:02 [socknal_sd01_00]
+root        1651  0.6  0.0      0     0 ?        S    10:30   0:02 [socknal_sd01_01]
+root        1652  0.6  0.0      0     0 ?        S    10:30   0:02 [socknal_sd01_02]
+root           1  0.5  0.0 168356 13284 ?        Ss   10:27   0:02 /sbin/init
+root        1345  0.4  0.2 1358328 98440 ?       Ssl  10:29   0:01 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent -config /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml -envconfig /opt/aws/amazon-cloudwatch-agent/etc/env-config.json -otelconfig /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.yaml -pidfile /opt/aws/amazon-cloudwatch-agent/var/amazon-cloudwatch-agent.pid
+root        1662  0.3  0.0      0     0 ?        I    10:30   0:00 [ptlrpcd_rcv]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       3.0Gi        33Gi       1.0Mi       3.5Gi        36Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 10:36:24 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        3005 38.5 25.6 30497968 10817816 ?   Isl  10:34   0:42 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+1003        2987  2.9  0.3 1063616 135072 ?      Sl   10:34   0:03 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-5:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1650  1.7  0.0      0     0 ?        R    10:30   0:06 [socknal_sd01_00]
+root        1651  1.7  0.0      0     0 ?        S    10:30   0:06 [socknal_sd01_01]
+root        1652  1.7  0.0      0     0 ?        S    10:30   0:06 [socknal_sd01_02]
+root        2262  1.7  0.0 1765368 36996 ?       Ssl  10:33   0:02 /usr/lib/snapd/snapd
+root        1665  0.7  0.0      0     0 ?        I    10:30   0:02 [ptlrpcd_00_02]
+root        1663  0.6  0.0      0     0 ?        I    10:30   0:02 [ptlrpcd_00_00]
+root        1664  0.6  0.0      0     0 ?        I    10:30   0:02 [ptlrpcd_00_01]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi       6.7Gi        26Gi       1.0Mi       6.9Gi        33Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 10:37:24 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        3005 39.0 30.6 30478080 12912396 ?   Isl  10:34   1:06 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1650  2.4  0.0      0     0 ?        S    10:30   0:10 [socknal_sd01_00]
+root        1651  2.4  0.0      0     0 ?        S    10:30   0:10 [socknal_sd01_01]
+root        1652  2.4  0.0      0     0 ?        S    10:30   0:10 [socknal_sd01_02]
+1003        2987  2.0  0.3 1063616 135072 ?      Sl   10:34   0:03 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-5:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        2262  1.2  0.0 1765368 36996 ?       Ssl  10:33   0:02 /usr/lib/snapd/snapd
+root        1663  1.0  0.0      0     0 ?        I    10:30   0:04 [ptlrpcd_00_00]
+root        1665  1.0  0.0      0     0 ?        I    10:30   0:04 [ptlrpcd_00_02]
+root        1664  0.9  0.0      0     0 ?        I    10:30   0:03 [ptlrpcd_00_01]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        10Gi        19Gi       1.0Mi        10Gi        29Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 10:38:24 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        3005 39.4 35.6 30347008 15059116 ?   Isl  10:34   1:31 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1650  3.0  0.0      0     0 ?        S    10:30   0:15 [socknal_sd01_00]
+root        1651  3.0  0.0      0     0 ?        S    10:30   0:15 [socknal_sd01_01]
+root        1652  3.0  0.0      0     0 ?        S    10:30   0:15 [socknal_sd01_02]
+1003        2987  1.5  0.3 1063616 135072 ?      Sl   10:34   0:03 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -m torch.distributed.run --nnodes=2 --nproc_per_node=1 --rdzv_id=1234 --rdzv_backend=c10d --rdzv_endpoint=cpu-dy-intel-5:29500 /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1663  1.2  0.0      0     0 ?        I    10:30   0:06 [ptlrpcd_00_00]
+root        1665  1.2  0.0      0     0 ?        I    10:30   0:06 [ptlrpcd_00_02]
+root        1664  1.1  0.0      0     0 ?        I    10:30   0:05 [ptlrpcd_00_01]
+root        1666  1.1  0.0      0     0 ?        I    10:30   0:05 [ptlrpcd_00_03]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        13Gi        12Gi       1.0Mi        13Gi        25Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 10:39:24 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        3005 39.5 41.1 30347008 17348176 ?   Isl  10:34   1:55 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1650  3.4  0.0      0     0 ?        S    10:30   0:19 [socknal_sd01_00]
+root        1651  3.4  0.0      0     0 ?        S    10:30   0:19 [socknal_sd01_01]
+root        1652  3.4  0.0      0     0 ?        S    10:30   0:19 [socknal_sd01_02]
+root        1663  1.4  0.0      0     0 ?        I    10:30   0:07 [ptlrpcd_00_00]
+root        1665  1.4  0.0      0     0 ?        I    10:30   0:08 [ptlrpcd_00_02]
+root        1671  1.3  0.0      0     0 ?        I    10:30   0:07 [ptlrpcd_02_00]
+root        1673  1.3  0.0      0     0 ?        I    10:30   0:07 [ptlrpcd_02_02]
+root        1675  1.3  0.0      0     0 ?        I    10:30   0:07 [ptlrpcd_03_00]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        17Gi       5.8Gi       1.0Mi        16Gi        22Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 10:40:24 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        3005 39.7 49.0 30347008 20700496 ?   Isl  10:34   2:19 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1650  3.8  0.0      0     0 ?        S    10:30   0:23 [socknal_sd01_00]
+root        1651  3.8  0.0      0     0 ?        S    10:30   0:23 [socknal_sd01_01]
+root        1652  3.8  0.0      0     0 ?        S    10:30   0:23 [socknal_sd01_02]
+root        1663  1.5  0.0      0     0 ?        I    10:30   0:09 [ptlrpcd_00_00]
+root        1665  1.5  0.0      0     0 ?        I    10:30   0:09 [ptlrpcd_00_02]
+root        1675  1.5  0.0      0     0 ?        I    10:30   0:09 [ptlrpcd_03_00]
+root        1677  1.5  0.0      0     0 ?        I    10:30   0:09 [ptlrpcd_03_02]
+root        1664  1.4  0.0      0     0 ?        I    10:30   0:08 [ptlrpcd_00_01]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        19Gi        17Gi       1.0Mi       2.9Gi        20Gi
+Swap:             0B          0B          0B
+-------------------------------------
+Resource usage at Wed Feb 19 10:41:24 UTC 2025:
+Top CPU processes:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+1003        3005 39.8 63.2 29298320 26678228 ?   Isl  10:34   2:43 /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python -u /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py --deepspeed /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+root        1650  4.1  0.0      0     0 ?        S    10:30   0:27 [socknal_sd01_00]
+root        1651  4.1  0.0      0     0 ?        S    10:30   0:27 [socknal_sd01_01]
+root        1652  4.1  0.0      0     0 ?        R    10:30   0:27 [socknal_sd01_02]
+root        1663  1.7  0.0      0     0 ?        I    10:30   0:11 [ptlrpcd_00_00]
+root        1665  1.7  0.0      0     0 ?        I    10:30   0:11 [ptlrpcd_00_02]
+root        1675  1.6  0.0      0     0 ?        I    10:30   0:11 [ptlrpcd_03_00]
+root        1677  1.6  0.0      0     0 ?        I    10:30   0:11 [ptlrpcd_03_02]
+root        1664  1.5  0.0      0     0 ?        I    10:30   0:10 [ptlrpcd_00_01]
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            40Gi        23Gi        10Gi       1.0Mi       6.3Gi        16Gi
+Swap:             0B          0B          0B
+-------------------------------------

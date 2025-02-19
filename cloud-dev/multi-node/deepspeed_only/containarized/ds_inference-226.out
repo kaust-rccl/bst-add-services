@@ -1,0 +1,66 @@
+My guessed rank = 0
+My guessed rank = 1
+[2025-02-19 10:34:55,651] [WARNING] [real_accelerator.py:181:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 10:34:55,651] [WARNING] [real_accelerator.py:181:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 10:34:55,792] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2025-02-19 10:34:55,794] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[DEBUG] PID: 3005
+[DEBUG] Hostname: cpu-dy-intel-5
+[DEBUG] CUDA_VISIBLE_DEVICES: 
+[DEBUG] MASTER_ADDR: cpu-dy-intel-5.bst-dev-2.pcluster
+[DEBUG] MASTER_PORT: 34779
+[DEBUG] Process rank from env: 0
+[DEBUG] Initializing process group with gloo backend...
+[DEBUG] PID: 2416
+[DEBUG] Hostname: cpu-dy-intel-6
+[DEBUG] CUDA_VISIBLE_DEVICES: 
+[DEBUG] MASTER_ADDR: cpu-dy-intel-5.bst-dev-2.pcluster
+[DEBUG] MASTER_PORT: 34779
+[DEBUG] Process rank from env: 1
+[DEBUG] Initializing process group with gloo backend...
+[DEBUG] Process group initialized.
+[DEBUG] Process group initialized.
+[DEBUG] World size: 2
+[DEBUG] Loading model from: /scratch/user03/gptj
+[DEBUG] World size: 2
+[DEBUG] Loading model from: /scratch/user03/gptj
+[DEBUG] Tokenizer loaded. Vocabulary size: 50400
+[DEBUG] Tokenizer loaded. Vocabulary size: 50400
+[DEBUG] Model loaded and moved to CPU.
+[DEBUG] Loading DeepSpeed config from: /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+[DEBUG] DeepSpeed config contents: {
+    "tensor_parallel": {
+        "tp_size": 2
+    },
+    "inference": {
+        "replace_with_kernel_inject": false,
+        "dtype": "float32"
+    }
+}
+
+
+[DEBUG] Initializing DeepSpeed inference engine...
+[2025-02-19 10:41:32,954] [INFO] [logging.py:128:log_dist] [Rank -1] DeepSpeed info: version=0.16.4+14b3cce4, git-hash=14b3cce4, git-branch=master
+[DEBUG] Error during DeepSpeed inference initialization: 1 validation error for DeepSpeedInferenceConfig
+inference
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'replace_with_kernel_inj...lse, 'dtype': 'float32'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/extra_forbidden
+[DEBUG] Model loaded and moved to CPU.
+[DEBUG] Loading DeepSpeed config from: /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/ds_config.json
+[DEBUG] DeepSpeed config contents: {
+    "tensor_parallel": {
+        "tp_size": 2
+    },
+    "inference": {
+        "replace_with_kernel_inject": false,
+        "dtype": "float32"
+    }
+}
+
+
+[DEBUG] Initializing DeepSpeed inference engine...
+[2025-02-19 10:41:33,182] [INFO] [logging.py:128:log_dist] [Rank -1] DeepSpeed info: version=0.16.4+14b3cce4, git-hash=14b3cce4, git-branch=master
+[DEBUG] Error during DeepSpeed inference initialization: 1 validation error for DeepSpeedInferenceConfig
+inference
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'replace_with_kernel_inj...lse, 'dtype': 'float32'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/extra_forbidden

@@ -1,0 +1,2 @@
+/scratch/user03/miniconda/bin/python: Error while finding module specification for 'torch.distributed.run' (ModuleNotFoundError: No module named 'torch')
+srun: error: cpu-dy-intel-1: task 0: Exited with exit code 1

@@ -1,0 +1,68 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  3.06it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.80it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  2.97it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  5.06it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.58it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Using /home/user03/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Using /home/user03/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...
+Emitting ninja build file /home/user03/.cache/torch_extensions/py310_cu124/deepspeed_shm_comm/build.ninja...
+Building extension module deepspeed_shm_comm...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+Loading extension module deepspeed_shm_comm...
+Loading extension module deepspeed_shm_comm...
+W0218 18:49:34.254000 126649841404992 torch/distributed/elastic/agent/server/api.py:688] Received Signals.SIGTERM death signal, shutting down workers
+W0218 18:49:34.255000 126649841404992 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 6387 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 255, in launch_agent
+    result = agent.run()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 124, in wrapper
+    result = f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 680, in run
+    result = self._invoke_run(role)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 835, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 79, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 6385 got signal: 15
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/deepspeed_multi_nodes.py", line 33, in <module>
+[rank0]:     ds_engine = deepspeed.init_inference(
+[rank0]:   File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/deepspeed/__init__.py", line 346, in init_inference
+[rank0]:     engine = InferenceEngine(model, config=ds_inference_config)
+[rank0]:   File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/deepspeed/inference/engine.py", line 182, in __init__
+[rank0]:     dist.broadcast(_rng_state, 0)
+[rank0]:   File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 117, in log_wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 224, in broadcast
+[rank0]:     return cdb.broadcast(tensor=tensor, src=src, group=group, async_op=async_op)
+[rank0]:   File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 600, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/deepspeed/comm/torch.py", line 200, in broadcast
+[rank0]:     return torch.distributed.broadcast(tensor=tensor, src=src, group=group, async_op=async_op)
+[rank0]:   File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 79, in wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 2205, in broadcast
+[rank0]:     work = default_pg.broadcast([tensor], opts)
+[rank0]: RuntimeError: ProcessGroupWrapper: Monitored Barrier encountered error running collective: CollectiveFingerPrint(SequenceNumber=0, OpType=BROADCAST, TensorShape=[5056], TensorDtypes=Byte, TensorDeviceTypes=TensorOptions(dtype=float (default), device=cpu, layout=Strided (default), requires_grad=false (default), pinned_memory=false (default), memory_format=(nullopt))). Error: 
+[rank0]: [../third_party/gloo/gloo/transport/tcp/pair.cc:534] Connection closed by peer [10.0.129.175]:32674
+slurmstepd: error: *** STEP 169.0 ON cpu-dy-intel-1 CANCELLED AT 2025-02-18T18:49:47 DUE TO NODE FAILURE, SEE SLURMCTLD LOG FOR DETAILS ***
+slurmstepd: error: *** JOB 169 ON cpu-dy-intel-1 CANCELLED AT 2025-02-18T18:49:47 DUE TO NODE FAILURE, SEE SLURMCTLD LOG FOR DETAILS ***
+W0218 18:49:47.476000 131447799553088 torch/distributed/elastic/agent/server/api.py:688] Received Signals.SIGTERM death signal, shutting down workers
+W0218 18:49:47.476000 131447799553088 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 7229 closing signal SIGTERM

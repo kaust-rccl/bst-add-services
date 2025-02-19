@@ -1,0 +1,23 @@
+[2025-02-18 18:49:21,241] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-18 18:49:21,241] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-18 18:49:21,270] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2025-02-18 18:49:21,270] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+[Rank 0] Torch distributed world size: 2
+[Rank 1] Torch distributed world size: 2
+[Rank 1] Model and tokenizer loaded successfully.
+[2025-02-18 18:49:29,311] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown
+[2025-02-18 18:49:29,314] [INFO] [logging.py:96:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-18 18:49:29,316] [INFO] [comm.py:637:init_distributed] cdb=None
+[Rank 0] Model and tokenizer loaded successfully.
+[2025-02-18 18:49:29,324] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown
+[2025-02-18 18:49:29,327] [INFO] [logging.py:96:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-18 18:49:29,329] [INFO] [comm.py:637:init_distributed] cdb=None
+ninja: no work to do.
+Time to load deepspeed_shm_comm op: 0.033019304275512695 seconds
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+Time to load deepspeed_shm_comm op: 3.0198519229888916 seconds
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+AutoTP:  [(<class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>, ['self_attn.o_proj', 'mlp.down_proj'])]
+AutoTP:  [(<class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>, ['mlp.down_proj', 'self_attn.o_proj'])]

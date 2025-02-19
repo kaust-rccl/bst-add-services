@@ -1,0 +1,138 @@
+/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/oneccl_bindings_for_pytorch/__init__.py:25: UserWarning: Warning: Cannot load xpu CCL. CCL doesn't work for XPU device due to /scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/oneccl_bindings_for_pytorch/lib/liboneccl_bindings_for_pytorch_xpu.so: cannot open shared object file: No such file or directory
+  warnings.warn(f"Warning: Cannot load xpu CCL. CCL doesn't work for XPU device due to {e}")
+/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/oneccl_bindings_for_pytorch/__init__.py:25: UserWarning: Warning: Cannot load xpu CCL. CCL doesn't work for XPU device due to /scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/oneccl_bindings_for_pytorch/lib/liboneccl_bindings_for_pytorch_xpu.so: cannot open shared object file: No such file or directory
+  warnings.warn(f"Warning: Cannot load xpu CCL. CCL doesn't work for XPU device due to {e}")
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [01:55<07:42, 115.71s/it]Loading checkpoint shards:  40%|████      | 2/5 [03:43<05:33, 111.27s/it]Loading checkpoint shards:  60%|██████    | 3/5 [05:07<03:16, 98.49s/it] Loading checkpoint shards:  80%|████████  | 4/5 [06:30<01:32, 92.37s/it]Loading checkpoint shards: 100%|██████████| 5/5 [07:33<00:00, 81.92s/it]Loading checkpoint shards: 100%|██████████| 5/5 [07:33<00:00, 90.71s/it]
+Some weights of GPTJForCausalLM were not initialized from the model checkpoint at /scratch/user03/gptj and are newly initialized: ['lm_head.bias', 'lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py", line 57, in <module>
+[rank1]:     ds_engine = deepspeed.init_inference(
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/__init__.py", line 364, in init_inference
+[rank1]:     engine = InferenceEngine(model, config=ds_inference_config)
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/inference/engine.py", line 119, in __init__
+[rank1]:     self._create_model_parallel_group(config)
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/inference/engine.py", line 250, in _create_model_parallel_group
+[rank1]:     init_distributed()
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 656, in init_distributed
+[rank1]:     init_deepspeed_backend(get_accelerator().communication_backend_name(), timeout, init_method)
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 160, in init_deepspeed_backend
+[rank1]:     ccl_backend = CCLBackend(rank=rank, world_size=size, timeout=timeout, init_method=init_method)
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/comm/ccl.py", line 38, in __init__
+[rank1]:     self.ccl_comm_op = build_ccl_op()
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/comm/ccl.py", line 20, in build_ccl_op
+[rank1]:     ccl_cpp_module = builder.load()
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/ops/op_builder/builder.py", line 529, in load
+[rank1]:     op_module = importlib.import_module(self.absolute_name())
+[rank1]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/importlib/__init__.py", line 126, in import_module
+[rank1]:     return _bootstrap._gcd_import(name[level:], package, level)
+[rank1]:   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+[rank1]:   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+[rank1]:   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+[rank1]:   File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+[rank1]:   File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+[rank1]:   File "<frozen importlib._bootstrap_external>", line 1176, in create_module
+[rank1]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[rank1]: ImportError: /scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/ops/comm/deepspeed_ccl_comm_op.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN3ccl2v122default_broadcast_attrE
+E0219 09:57:00.158000 1975 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 1989) of binary: /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python
+Traceback (most recent call last):
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 922, in <module>
+    main()
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-19_09:57:00
+  host      : cpu-dy-intel-8.bst-dev-2.pcluster
+  rank      : 1 (local_rank: 0)
+  exitcode  : 1 (pid: 1989)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+srun: error: cpu-dy-intel-8: task 1: Exited with exit code 1
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [02:00<08:01, 120.40s/it]Loading checkpoint shards:  40%|████      | 2/5 [03:51<05:44, 114.98s/it]Loading checkpoint shards:  60%|██████    | 3/5 [05:14<03:20, 100.25s/it]Loading checkpoint shards:  80%|████████  | 4/5 [06:38<01:33, 93.94s/it] Loading checkpoint shards: 100%|██████████| 5/5 [07:42<00:00, 83.25s/it]Loading checkpoint shards: 100%|██████████| 5/5 [07:42<00:00, 92.57s/it]
+Some weights of GPTJForCausalLM were not initialized from the model checkpoint at /scratch/user03/gptj and are newly initialized: ['lm_head.bias', 'lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py", line 57, in <module>
+[rank0]:     ds_engine = deepspeed.init_inference(
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/__init__.py", line 364, in init_inference
+[rank0]:     engine = InferenceEngine(model, config=ds_inference_config)
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/inference/engine.py", line 119, in __init__
+[rank0]:     self._create_model_parallel_group(config)
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/inference/engine.py", line 250, in _create_model_parallel_group
+[rank0]:     init_distributed()
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 656, in init_distributed
+[rank0]:     init_deepspeed_backend(get_accelerator().communication_backend_name(), timeout, init_method)
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 160, in init_deepspeed_backend
+[rank0]:     ccl_backend = CCLBackend(rank=rank, world_size=size, timeout=timeout, init_method=init_method)
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/comm/ccl.py", line 38, in __init__
+[rank0]:     self.ccl_comm_op = build_ccl_op()
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/comm/ccl.py", line 20, in build_ccl_op
+[rank0]:     ccl_cpp_module = builder.load()
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/ops/op_builder/builder.py", line 529, in load
+[rank0]:     op_module = importlib.import_module(self.absolute_name())
+[rank0]:   File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/importlib/__init__.py", line 126, in import_module
+[rank0]:     return _bootstrap._gcd_import(name[level:], package, level)
+[rank0]:   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+[rank0]:   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+[rank0]:   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+[rank0]:   File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+[rank0]:   File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+[rank0]:   File "<frozen importlib._bootstrap_external>", line 1176, in create_module
+[rank0]:   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+[rank0]: ImportError: /scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/ops/comm/deepspeed_ccl_comm_op.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN3ccl2v122default_broadcast_attrE
+E0219 09:57:09.465000 2005 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 2020) of binary: /scratch/user03/miniconda/envs/deepspeed_cpu/bin/python
+Traceback (most recent call last):
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 922, in <module>
+    main()
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_multi_node_debug.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-19_09:57:09
+  host      : cpu-dy-intel-7.bst-dev-2.pcluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2020)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+srun: error: cpu-dy-intel-7: task 0: Exited with exit code 1

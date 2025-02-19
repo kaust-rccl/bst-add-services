@@ -1,0 +1,530 @@
+[2025-02-18 19:01:10,080] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-18 19:01:10,102] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2025-02-18 19:01:11,413] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-18 19:01:11,448] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+[Rank 1] Torch distributed world size: 2
+[Rank 0] Torch distributed world size: 2
+[Rank 0] Model and tokenizer loaded successfully.
+[2025-02-18 19:01:20,529] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown
+[2025-02-18 19:01:20,532] [INFO] [logging.py:96:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-18 19:01:20,534] [INFO] [comm.py:637:init_distributed] cdb=None
+[Rank 1] Model and tokenizer loaded successfully.
+[2025-02-18 19:01:20,546] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown
+[2025-02-18 19:01:20,549] [INFO] [logging.py:96:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-18 19:01:20,551] [INFO] [comm.py:637:init_distributed] cdb=None
+ninja: no work to do.
+Time to load deepspeed_shm_comm op: 0.043305397033691406 seconds
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+ninja: no work to do.
+Time to load deepspeed_shm_comm op: 0.06568026542663574 seconds
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+AutoTP:  [(<class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>, ['self_attn.o_proj', 'mlp.down_proj'])]
+AutoTP:  [(<class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>, ['mlp.down_proj', 'self_attn.o_proj'])]
+[Rank 0] DeepSpeed Engine created successfully: InferenceEngine(
+  (module): LlamaForCausalLM(
+    (model): LlamaModel(
+      (embed_tokens): Embedding(32256, 2048)
+      (layers): ModuleList(
+        (0-23): 24 x LlamaDecoderLayer(
+          (self_attn): LlamaSdpaAttention(
+            (q_proj): LinearLayer()
+            (k_proj): LinearLayer()
+            (v_proj): LinearLayer()
+            (o_proj): LinearAllreduce()
+            (rotary_emb): LlamaRotaryEmbedding()
+          )
+          (mlp): LlamaMLP(
+            (gate_proj): LinearLayer()
+            (up_proj): LinearLayer()
+            (down_proj): LinearAllreduce()
+            (act_fn): SiLU()
+          )
+          (input_layernorm): LlamaRMSNorm((2048,), eps=1e-06)
+          (post_attention_layernorm): LlamaRMSNorm((2048,), eps=1e-06)
+        )
+      )
+      (norm): LlamaRMSNorm((2048,), eps=1e-06)
+      (rotary_emb): LlamaRotaryEmbedding()
+    )
+    (lm_head): Linear(in_features=2048, out_features=32256, bias=False)
+  )
+)
+[Rank 0] Parameter: model.embed_tokens.weight, Shape: torch.Size([32256, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.0.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.0.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.0.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.0.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] DeepSpeed Engine created successfully: InferenceEngine(
+  (module): LlamaForCausalLM(
+    (model): LlamaModel(
+      (embed_tokens): Embedding(32256, 2048)
+      (layers): ModuleList(
+        (0-23): 24 x LlamaDecoderLayer(
+          (self_attn): LlamaSdpaAttention(
+            (q_proj): LinearLayer()
+            (k_proj): LinearLayer()
+            (v_proj): LinearLayer()
+            (o_proj): LinearAllreduce()
+            (rotary_emb): LlamaRotaryEmbedding()
+          )
+          (mlp): LlamaMLP(
+            (gate_proj): LinearLayer()
+            (up_proj): LinearLayer()
+            (down_proj): LinearAllreduce()
+            (act_fn): SiLU()
+          )
+          (input_layernorm): LlamaRMSNorm((2048,), eps=1e-06)
+          (post_attention_layernorm): LlamaRMSNorm((2048,), eps=1e-06)
+        )
+      )
+      (norm): LlamaRMSNorm((2048,), eps=1e-06)
+      (rotary_emb): LlamaRotaryEmbedding()
+    )
+    (lm_head): Linear(in_features=2048, out_features=32256, bias=False)
+  )
+)
+[Rank 0] Parameter: model.layers.0.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.0.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.0.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.embed_tokens.weight, Shape: torch.Size([32256, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.0.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.0.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.0.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.0.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.1.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.0.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.0.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.1.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.0.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.1.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.1.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.0.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.1.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.0.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.1.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.0.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.1.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.1.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.0.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.1.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.1.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.2.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.1.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.2.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.1.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.2.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.2.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.1.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.2.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.2.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.1.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.2.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.1.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.2.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.2.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.1.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.3.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.1.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.3.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.1.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.3.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.2.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.3.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.2.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.3.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.2.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.3.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.2.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.3.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.2.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.3.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.2.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.3.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.2.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.4.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.2.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.4.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.2.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.4.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.3.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.4.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.3.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.4.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.3.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.4.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.3.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.4.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.3.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.4.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.3.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.4.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.3.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.5.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.3.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.5.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.3.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.5.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.4.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.5.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.4.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.5.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.4.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.5.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.4.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.5.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.4.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.5.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.4.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.5.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.4.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.6.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.4.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.6.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.4.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.6.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.5.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.6.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.5.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.6.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.5.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.6.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.5.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.6.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.5.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.6.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.5.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.6.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.5.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.7.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.5.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.7.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.5.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.7.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.6.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.7.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.6.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.7.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.6.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.7.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.6.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.7.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.6.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.7.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.6.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.7.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.6.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.8.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.6.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.8.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.6.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.8.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.7.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.8.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.7.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.8.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.7.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.8.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.7.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.8.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.7.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.8.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.7.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.8.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.7.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.9.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.7.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.9.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.7.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.9.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.8.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.9.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.8.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.9.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.8.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.9.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.8.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.9.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.8.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.9.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.8.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.9.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.8.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.10.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.8.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.10.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.8.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.10.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.9.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.10.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.9.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.10.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.9.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.10.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.10.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.10.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.10.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.11.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.9.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.11.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.11.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.9.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.11.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.11.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.9.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.11.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.9.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.11.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.9.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.11.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.9.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.11.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.10.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.12.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.10.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.10.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.12.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.10.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.12.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.10.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.12.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.10.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.12.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.10.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.12.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.10.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.12.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.10.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.12.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.11.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.12.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.11.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.13.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.11.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.13.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.11.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.13.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.11.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.13.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.13.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.11.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.13.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.11.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.11.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.13.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.11.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.13.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.12.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.13.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.14.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.12.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.14.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.14.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.12.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.14.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.12.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.14.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.12.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.14.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.12.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.12.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.14.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.12.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.12.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.14.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.13.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.14.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.13.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.15.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.13.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.15.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.15.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.13.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.15.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.15.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.13.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.15.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.15.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.13.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.15.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.13.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.15.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.13.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.16.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.13.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.16.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.14.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.16.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.14.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.16.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.14.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.16.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.14.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.14.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.16.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.14.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.16.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.14.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.16.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.14.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.16.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.14.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.15.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.17.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.15.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.17.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.15.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.17.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.15.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.15.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.17.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.17.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.15.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.17.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.15.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.17.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.17.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.15.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.17.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.15.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.18.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.16.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.18.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.16.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.18.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.16.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.18.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.16.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.18.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.16.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.18.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.16.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.18.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.16.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.18.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.16.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.18.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.16.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.17.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.19.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.17.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.19.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.17.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.19.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.17.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.19.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.19.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.17.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.19.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.19.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.17.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.19.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.17.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.19.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.17.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.20.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.17.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.18.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.20.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.18.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.20.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.18.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.20.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.18.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.18.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.20.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.18.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.20.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.18.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.20.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.20.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.18.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.20.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.21.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.18.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.21.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.21.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.19.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.21.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.19.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.21.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.19.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.21.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.19.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.21.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.19.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.21.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.19.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.21.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.19.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.22.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.19.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.22.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.19.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.20.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.22.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.22.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.22.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.22.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.22.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 0] Parameter: model.layers.22.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.22.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.layers.23.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.23.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.23.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.23.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] Parameter: model.layers.23.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.20.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.23.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.20.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.23.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.20.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.20.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.23.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.20.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Parameter: model.layers.23.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.20.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.20.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: model.norm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.20.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 0] Parameter: lm_head.weight, Shape: torch.Size([32256, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.21.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] DeepSpeed Engine Initialized.
+[Rank 1] Parameter: model.layers.21.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 0] Initial Input Shape: torch.Size([1, 2])
+[Rank 1] Parameter: model.layers.21.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.21.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 0] MASTER_ADDR: cpu-dy-intel-1.bst-dev-2.pcluster, MASTER_PORT: 58109
+[Rank 1] Parameter: model.layers.21.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 0] Converted Input to Float32: torch.int64
+[Rank 1] Parameter: model.layers.21.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.21.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.21.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.21.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.22.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.22.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.22.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.22.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.22.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.22.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.22.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.22.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.22.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.23.self_attn.q_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.23.self_attn.k_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.23.self_attn.v_proj.weight, Shape: torch.Size([1024, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.23.self_attn.o_proj.weight, Shape: torch.Size([2048, 1024]), Device: cpu
+[Rank 1] Parameter: model.layers.23.mlp.gate_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.23.mlp.up_proj.weight, Shape: torch.Size([2752, 2048]), Device: cpu
+[Rank 1] Parameter: model.layers.23.mlp.down_proj.weight, Shape: torch.Size([2048, 2752]), Device: cpu
+[Rank 1] Parameter: model.layers.23.input_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.layers.23.post_attention_layernorm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: model.norm.weight, Shape: torch.Size([2048]), Device: cpu
+[Rank 1] Parameter: lm_head.weight, Shape: torch.Size([32256, 2048]), Device: cpu
+[Rank 1] DeepSpeed Engine Initialized.
+[Rank 1] Initial Input Shape: torch.Size([1, 2])
+[Rank 1] MASTER_ADDR: cpu-dy-intel-1.bst-dev-2.pcluster, MASTER_PORT: 58109
+[Rank 1] Converted Input to Float32: torch.int64
+[Rank 0] All processes synchronized before generate()
+[Rank 1] All processes synchronized before generate()

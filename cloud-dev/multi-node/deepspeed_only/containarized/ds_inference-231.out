@@ -1,0 +1,52 @@
+My guessed rank = 1
+My guessed rank = 0
+[2025-02-19 11:38:53,612] [WARNING] [real_accelerator.py:181:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 11:38:53,612] [WARNING] [real_accelerator.py:181:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 11:38:53,737] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2025-02-19 11:38:53,737] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[DEBUG] PID: 3380
+[DEBUG] PID: 3381
+[DEBUG] Hostname: [DEBUG]cpu-dy-intel-1
+ Hostname: cpu-dy-intel-1
+[DEBUG] CUDA_VISIBLE_DEVICES: [DEBUG]
+ CUDA_VISIBLE_DEVICES: [DEBUG]
+ MASTER_ADDR: cpu-dy-intel-1.bst-dev-2.pcluster[DEBUG]
+ MASTER_ADDR: [DEBUG]cpu-dy-intel-1.bst-dev-2.pcluster MASTER_PORT:
+ 39527[DEBUG]
+ MASTER_PORT: 39527
+[DEBUG] Process rank from env: [DEBUG]1 
+Process rank from env: 0
+[DEBUG] Initializing process group with gloo backend...
+[DEBUG] Initializing process group with gloo backend...
+[DEBUG][DEBUG]  Process group initialized.Process group initialized.
+
+[DEBUG][DEBUG]  World size:World size:  2
+2
+[DEBUG] [DEBUG]Loading model from:  Loading model from:/scratch/user03/1bmodel 
+/scratch/user03/1bmodel
+[DEBUG] Tokenizer loaded. Vocabulary size: 32022
+[DEBUG] Tokenizer loaded. Vocabulary size: 32022
+[DEBUG] Model loaded and moved to CPU.
+[DEBUG] Loading DeepSpeed config from:[DEBUG] /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_ds_config.json 
+Model loaded and moved to CPU.
+[DEBUG] Loading DeepSpeed config from: /scratch/user03/scripts/llm-inference/multi-node/deepspeed_only/containarized/new_ds_config.json
+[DEBUG] DeepSpeed config contents: {
+    "tensor_parallel": {
+        "tp_size": 2
+    }
+}
+
+[DEBUG] Initializing DeepSpeed inference engine...
+[2025-02-19 11:38:58,382] [INFO] [logging.py:128:log_dist] [Rank -1] DeepSpeed info: version=0.16.4+14b3cce4, git-hash=14b3cce4, git-branch=master
+[DEBUG] DeepSpeed config contents: {
+    "tensor_parallel": {
+        "tp_size": 2
+    }
+}
+
+[DEBUG] Initializing DeepSpeed inference engine...
+[2025-02-19 11:38:58,382] [INFO] [logging.py:128:log_dist] [Rank -1] DeepSpeed info: version=0.16.4+14b3cce4, git-hash=14b3cce4, git-branch=master
+[2025-02-19 11:38:58,396] [INFO] [logging.py:128:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-19 11:38:58,396] [INFO] [logging.py:128:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[DEBUG] Error during DeepSpeed inference initialization: /scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/ops/comm/deepspeed_ccl_comm_op.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN3ccl2v122default_broadcast_attrE
+[DEBUG] Error during DeepSpeed inference initialization: /scratch/user03/miniconda/envs/deepspeed_cpu/lib/python3.10/site-packages/deepspeed/ops/comm/deepspeed_ccl_comm_op.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN3ccl2v122default_broadcast_attrE

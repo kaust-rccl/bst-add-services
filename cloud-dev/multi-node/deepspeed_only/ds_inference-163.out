@@ -1,0 +1,12 @@
+[2025-02-18 18:17:05,325] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-18 18:17:05,349] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2025-02-18 18:17:05,375] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-18 18:17:05,398] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+[Rank 0] Torch distributed world size: 2
+[Rank 1] Torch distributed world size: 2
+[Rank 1] Model and tokenizer loaded successfully.
+[2025-02-18 18:17:11,462] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown
+[Rank 0] Model and tokenizer loaded successfully.
+[2025-02-18 18:17:11,466] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown

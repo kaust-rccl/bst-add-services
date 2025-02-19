@@ -1,0 +1,17 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 12.63it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 12.61it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 12.80it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 12.78it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+slurmstepd: error: *** STEP 167.0 ON cpu-dy-intel-1 CANCELLED AT 2025-02-18T18:48:49 ***
+slurmstepd: error: *** JOB 167 ON cpu-dy-intel-1 CANCELLED AT 2025-02-18T18:48:49 ***
+W0218 18:48:49.872000 125904913775680 torch/distributed/elastic/agent/server/api.py:688] Received Signals.SIGTERM death signal, shutting down workers
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+W0218 18:48:49.871000 126401087339584 torch/distributed/elastic/agent/server/api.py:688] Received Signals.SIGTERM death signal, shutting down workers
+W0218 18:48:49.872000 125904913775680 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 6773 closing signal SIGTERM
+W0218 18:48:49.871000 126401087339584 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 5960 closing signal SIGTERM

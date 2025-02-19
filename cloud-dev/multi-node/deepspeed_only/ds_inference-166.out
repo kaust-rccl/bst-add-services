@@ -1,0 +1,14 @@
+[Rank 0] Torch distributed world size: 2
+[Rank 1] Torch distributed world size: 2
+[Rank 1] Model and tokenizer loaded successfully.
+[Rank 1] DeepSpeed Engine Initialized.
+[Rank 1] Initial Input Shape: torch.Size([1, 2])
+[Rank 1] MASTER_ADDR: cpu-dy-intel-1.bst-dev-2.pcluster, MASTER_PORT: 38697
+[Rank 1] Converted Input to Float32: torch.int64
+[Rank 0] Model and tokenizer loaded successfully.
+[Rank 0] DeepSpeed Engine Initialized.
+[Rank 0] Initial Input Shape: torch.Size([1, 2])
+[Rank 0] MASTER_ADDR: cpu-dy-intel-1.bst-dev-2.pcluster, MASTER_PORT: 38697
+[Rank 0] Converted Input to Float32: torch.int64
+[Rank 0] All processes synchronized before generate()
+[Rank 1] All processes synchronized before generate()

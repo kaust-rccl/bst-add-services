@@ -1,0 +1,238 @@
+[2025-02-19 12:18:14,238] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 12:18:14,267] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+[2025-02-19 12:18:17,314] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 12:18:17,327] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 12:18:17,352] [WARNING] [real_accelerator.py:162:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2025-02-19 12:18:17,364] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2025-02-19 12:18:17,366] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2025-02-19 12:18:17,393] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+Warning: The default cache directory for DeepSpeed Triton autotune, /home/user03/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+[Rank 0] Torch distributed world size: 4
+[Rank 1] Torch distributed world size: 4
+[Rank 3] Torch distributed world size: 4
+[Rank 2] Torch distributed world size: 4
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  7.51it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  8.18it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  8.06it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[Rank 0] Model and tokenizer loaded successfully.
+[2025-02-19 12:18:29,516] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown
+[2025-02-19 12:18:29,517] [INFO] [logging.py:96:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-19 12:18:29,519] [INFO] [comm.py:637:init_distributed] cdb=None
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  2.92it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.53it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[Rank 3] Model and tokenizer loaded successfully.
+[2025-02-19 12:18:29,952] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown
+[2025-02-19 12:18:29,953] [INFO] [logging.py:96:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-19 12:18:29,955] [INFO] [comm.py:637:init_distributed] cdb=None
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  2.86it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.80it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.36it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  2.81it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.72it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.28it/s]
+Some weights of LlamaForCausalLM were not initialized from the model checkpoint at /scratch/user03/1bmodel and are newly initialized: ['lm_head.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[Rank 1] Model and tokenizer loaded successfully.
+[2025-02-19 12:18:29,972] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown
+[2025-02-19 12:18:29,973] [INFO] [logging.py:96:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[Rank 2] Model and tokenizer loaded successfully.
+[2025-02-19 12:18:29,973] [INFO] [logging.py:96:log_dist] [Rank -1] DeepSpeed info: version=0.14.5, git-hash=unknown, git-branch=unknown
+[2025-02-19 12:18:29,974] [INFO] [logging.py:96:log_dist] [Rank -1] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+[2025-02-19 12:18:29,975] [INFO] [comm.py:637:init_distributed] cdb=None
+[2025-02-19 12:18:29,976] [INFO] [comm.py:637:init_distributed] cdb=None
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Using /home/user03/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...
+Emitting ninja build file /home/user03/.cache/torch_extensions/py310_cu124/deepspeed_shm_comm/build.ninja...
+Building extension module deepspeed_shm_comm...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module deepspeed_shm_comm...
+Time to load deepspeed_shm_comm op: 0.03889799118041992 seconds
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Using /home/user03/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Using /home/user03/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...
+Emitting ninja build file /home/user03/.cache/torch_extensions/py310_cu124/deepspeed_shm_comm/build.ninja...
+Building extension module deepspeed_shm_comm...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module deepspeed_shm_comm...
+Time to load deepspeed_shm_comm op: 0.0893392562866211 seconds
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+Using /home/user03/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...
+Emitting ninja build file /home/user03/.cache/torch_extensions/py310_cu124/deepspeed_shm_comm/build.ninja...
+Building extension module deepspeed_shm_comm...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module deepspeed_shm_comm...
+Time to load deepspeed_shm_comm op: 0.20984554290771484 seconds
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+Loading extension module deepspeed_shm_comm...
+Time to load deepspeed_shm_comm op: 3.023846387863159 seconds
+DeepSpeed deepspeed.ops.comm.deepspeed_shm_comm_op built successfully
+AutoTP:  [(<class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>, ['mlp.down_proj', 'self_attn.o_proj'])]
+AutoTP:  [(<class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>, ['mlp.down_proj', 'self_attn.o_proj'])]
+AutoTP:  [(<class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>, ['mlp.down_proj', 'self_attn.o_proj'])]
+AutoTP:  [(<class 'transformers.models.llama.modeling_llama.LlamaDecoderLayer'>, ['mlp.down_proj', 'self_attn.o_proj'])]
+[Rank 2] DeepSpeed Inference Engine created successfully.
+[Rank 2] Number of parameters in shard: 431065088
+[Rank 0] DeepSpeed Inference Engine created successfully.
+[Rank 1] DeepSpeed Inference Engine created successfully.
+[Rank 3] DeepSpeed Inference Engine created successfully.
+[Rank 0] Number of parameters in shard: 440502272
+[Rank 1] Number of parameters in shard: 440502272
+[Rank 3] Number of parameters in shard: 431065088
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
+E0219 12:18:45.616000 128981664153088 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: -11) local_rank: 0 (pid: 3348) of binary: /sw/apps/python/3.10.16/bin/python
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+======================================================
+python_dummy.py FAILED
+------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-19_12:18:45
+  host      : cpu-dy-intel-2.bst-dev-2.pcluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : -11 (pid: 3348)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 3348
+======================================================
+E0219 12:18:45.719000 134043121638912 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: -11) local_rank: 0 (pid: 1998) of binary: /sw/apps/python/3.10.16/bin/python
+E0219 12:18:45.732000 130476934344192 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: -11) local_rank: 0 (pid: 1993) of binary: /sw/apps/python/3.10.16/bin/python
+E0219 12:18:45.735000 133605362605568 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: -11) local_rank: 0 (pid: 1999) of binary: /sw/apps/python/3.10.16/bin/python
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+W0219 12:18:45.746000 134043121638912 torch/distributed/elastic/rendezvous/dynamic_rendezvous.py:1218] The node 'cpu-dy-intel-5.bst-dev-2.pcluster_1996_0' has failed to shutdown the rendezvous '1234' due to an error of type RendezvousConnectionError.
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+W0219 12:18:45.747000 134043121638912 torch/distributed/elastic/rendezvous/dynamic_rendezvous.py:1218] The node 'cpu-dy-intel-5.bst-dev-2.pcluster_1996_0' has failed to shutdown the rendezvous '1234' due to an error of type RendezvousConnectionError.
+W0219 12:18:45.749000 134043121638912 torch/distributed/elastic/rendezvous/dynamic_rendezvous.py:1218] The node 'cpu-dy-intel-5.bst-dev-2.pcluster_1996_0' has failed to shutdown the rendezvous '1234' due to an error of type RendezvousConnectionError.
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+W0219 12:18:45.754000 130476934344192 torch/distributed/elastic/rendezvous/dynamic_rendezvous.py:1218] The node 'cpu-dy-intel-3.bst-dev-2.pcluster_1988_0' has failed to shutdown the rendezvous '1234' due to an error of type RendezvousConnectionError.
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 905, in <module>
+W0219 12:18:45.756000 130476934344192 torch/distributed/elastic/rendezvous/dynamic_rendezvous.py:1218] The node 'cpu-dy-intel-3.bst-dev-2.pcluster_1988_0' has failed to shutdown the rendezvous '1234' due to an error of type RendezvousConnectionError.
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+W0219 12:18:45.757000 130476934344192 torch/distributed/elastic/rendezvous/dynamic_rendezvous.py:1218] The node 'cpu-dy-intel-3.bst-dev-2.pcluster_1988_0' has failed to shutdown the rendezvous '1234' due to an error of type RendezvousConnectionError.
+Traceback (most recent call last):
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    return f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+======================================================
+python_dummy.py FAILED
+------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-19_12:18:45
+  host      : cpu-dy-intel-4.bst-dev-2.pcluster
+  rank      : 2 (local_rank: 0)
+  exitcode  : -11 (pid: 1999)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 1999
+======================================================
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+======================================================
+python_dummy.py FAILED
+------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-19_12:18:45
+  host      : cpu-dy-intel-5.bst-dev-2.pcluster
+  rank      : 3 (local_rank: 0)
+  exitcode  : -11 (pid: 1998)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 1998
+======================================================
+    return _run_code(code, main_globals, None,
+  File "/sw/apps/python/3.10.16/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/sw/apps/python/3.10.16/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+======================================================
+python_dummy.py FAILED
+------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-19_12:18:45
+  host      : cpu-dy-intel-3.bst-dev-2.pcluster
+  rank      : 1 (local_rank: 0)
+  exitcode  : -11 (pid: 1993)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 1993
+======================================================
+srun: error: cpu-dy-intel-2: task 0: Exited with exit code 1
+srun: error: cpu-dy-intel-5: task 3: Exited with exit code 1
+srun: error: cpu-dy-intel-4: task 2: Exited with exit code 1
+srun: error: cpu-dy-intel-3: task 1: Exited with exit code 1

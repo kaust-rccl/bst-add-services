@@ -1,0 +1,8 @@
+{
+    "tensor_parallel": {
+        "tp_size": 2
+    },
+    "communication_data_type": "fp32",
+    "disable_allgather": true,
+    "shm_comm": false
+}
